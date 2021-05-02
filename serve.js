@@ -8,6 +8,9 @@ const io   = require("socket.io")(http);
 app.get("/", (req, res)=>{
   res.sendFile(__dirname + "/index.html");
 });
+app.get("/haiku.js", (req, res)=>{
+  res.sendFile(__dirname + "/haiku.js");
+});
 
 /**
  * [イベント] ユーザーが接続

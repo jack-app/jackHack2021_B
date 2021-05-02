@@ -2,11 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>SocketIOチャット</title>
+  <title>Firestoreチャット</title>
 </head>
 <body>
 
-<h1>SocketIOチャット</h1>
+<h1>Firestoreチャット</h1>
+<div id="messages">@messages</div>
+<div class="chat-form">
+  <input type="text">
+  <input type="submit" value="送信">
+</div>
 
 <!-- 発言フォーム -->
 <form id="frm-post">
@@ -18,14 +23,18 @@
 <ul id="msglist">
 </ul>
 
+<a href="http://www.goo.ne.jp/">
+  <img src="//u.xgoo.jp/img/sgoo.png" alt="supported by goo"
+  title="supported by goo" width="100">
+</a>
 
 <script src="/socket.io/socket.io.js"></script>
+<script src="haiku.js"></script>
 <script>
   //-------------------------------------
   // Socket.ioサーバへ接続
   //-------------------------------------
   const socket = io();
-
   /**
    * [イベント] フォームが送信された
    */
@@ -40,7 +49,7 @@
     }
 
     // Socket.ioサーバへ送信
-    socket.emit("post", {text: msg.value});
+    socket.emit("post", {text: parce(msg.value)});
 
     // 発言フォームを空にする
     msg.value = "";
