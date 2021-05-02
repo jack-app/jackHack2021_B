@@ -6,11 +6,15 @@ const io   = require("socket.io")(http);
  * "/"にアクセスがあったらindex.htmlを返却
  */
 app.get("/", (req, res)=>{
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/main.html");
 });
 app.get("/haiku.js", (req, res)=>{
   res.sendFile(__dirname + "/haiku.js");
 });
+
+/*app.get("/haiku.js", (req, res)=>{
+  res.sendFile(__dirname + "/haiku.js");
+});*/
 
 /**
  * [イベント] ユーザーが接続
