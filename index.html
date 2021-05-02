@@ -7,11 +7,14 @@
 <body>
 
 <h1>Firestoreチャット</h1>
+
+<!--
 <div id="messages">@messages</div>
 <div class="chat-form">
   <input type="text">
   <input type="submit" value="送信">
 </div>
+-->
 
 <!-- 発言フォーム -->
 <form id="frm-post">
@@ -38,6 +41,20 @@
   /**
    * [イベント] フォームが送信された
    */
+
+  async function postHaiku(msg) {
+    var haiku = await parce(msg.value);
+    console.log(haiku);
+    if (haiku != null) {
+      // Socket.ioサーバへ送信
+      socket.emit("post", {text: haiku});
+      // 発言フォームを空にする
+      msg.value = "";
+    }else{
+      alert("この文は575ではありません")
+    };
+  };
+
   document.querySelector("#frm-post").addEventListener("submit", (e)=>{
     // 規定の送信処理をキャンセル(画面遷移しないなど)
     e.preventDefault();
@@ -47,12 +64,7 @@
     if( msg.value === "" ){
       return(false);
     }
-
-    // Socket.ioサーバへ送信
-    socket.emit("post", {text: parce(msg.value)});
-
-    // 発言フォームを空にする
-    msg.value = "";
+    postHaiku(msg);
   });
 
   /**
