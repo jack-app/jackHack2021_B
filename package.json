@@ -1,5 +1,8 @@
 {
-  "name": "jackHack2021_B",
+<<<<<<< HEAD
+=======
+  "name": "five-seven-five",
+>>>>>>> c123ba910a191ef666e4d113578ed41f757f03a7
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +13,20 @@
     "type": "git",
     "url": "git+https://github.com/jack-app/jackHack2021_B.git"
   },
-  "keywords": [],
+<<<<<<< HEAD
+=======
+>>>>>>> c123ba910a191ef666e4d113578ed41f757f03a7
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jack-app/jackHack2021_B/issues"
   },
-  "homepage": "https://github.com/jack-app/jackHack2021_B#readme"
+<<<<<<< HEAD
+=======
+  "homepage": "https://github.com/jack-app/jackHack2021_B#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  }
+>>>>>>> c123ba910a191ef666e4d113578ed41f757f03a7
 }
