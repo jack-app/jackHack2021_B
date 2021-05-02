@@ -58,12 +58,12 @@
     let ary = await morph(str);
     let kami="",naka="",simo="",kami_y="",naka_y="",simo_y="";
 
-    while (haikuLength(kami_y) < 5) {
+    while (haikuLength(kami_y) < 5 && ary.length >0) {
       let word = ary.shift();
       kami += word[0];
       kami_y += word[1];
     };
-    while (haikuLength(naka_y) < 7) {
+    while (haikuLength(naka_y) < 7 && ary.length >0) {
       let word = ary.shift();
       naka += word[0];
       naka_y += word[1];
