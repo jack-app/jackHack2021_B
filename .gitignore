@@ -114,3 +114,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# firebase関連
+./five-seven-five-93ee2-firebase-adminsdk-q2lof-71c98e5a90.json

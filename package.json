@@ -18,6 +18,11 @@
   "homepage": "https://github.com/jack-app/jackHack2021_B#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^8.4.3",
+    "http": "0.0.1-security",
     "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "firebase-admin": "^9.7.0"
   }
 }
