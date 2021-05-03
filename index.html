@@ -8,7 +8,6 @@
 
 <body>
 
-<<<<<<< HEAD
 <h1>Firestoreチャット</h1>
 
 <!--
@@ -18,14 +17,6 @@
   <input type="submit" value="送信">
 </div>
 -->
-=======
-    <h1>Firestoreチャット</h1>
-    <div id="messages">@messages</div>
-    <div class="chat-form">
-        <input type="text">
-        <input type="submit" value="送信">
-    </div>
->>>>>>> 78ec88cdb8e32d04b4038f328a3bcea72d50f454
 
     <!-- 発言フォーム -->
     <form id="frm-post">
@@ -41,22 +32,10 @@
         <img src="//u.xgoo.jp/img/sgoo.png" alt="supported by goo" title="supported by goo" width="100">
     </a>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="haiku.js"></script>
     <script src="watson.js"></script>
-    <script>
 
-        //-------------------------------------
-        // Socket.ioサーバへ接続
-        //-------------------------------------
-        const socket = io();
-        /**
-         * [イベント] フォームが送信された
-         */
-
-<<<<<<< HEAD
 <script src="/socket.io/socket.io.js"></script>
-<script src="haiku.js"></script>
 <script>
   //-------------------------------------
   // Socket.ioサーバへ接続
@@ -90,39 +69,6 @@
     }
     postHaiku(msg);
   });
-=======
-        // $(function () {
-        //     $('#btn_id').click(function () {
-        //         //
-        //         // バリデーションチェックや、データの加工を行う。
-        //         //
-        //         console.log("jquery");
-        //         //$('frm-post').submit();
-        //     });
-        // })
-
-        document.querySelector("#frm-post").addEventListener("submit", async (e) => {
-            // 規定の送信処理をキャンセル(画面遷移しないなど)
-            e.preventDefault();
-            //replace('dd');
-            // var spanText = document.getElementById('messages');
-            // console.log(spanText.innerText);
-            // spanText.innerText="nu";
-            // spanText.text="sss";
-            // 入力内容を取得する
-            const msg = document.querySelector("#msg");
-            if (msg.value === "") {
-                return (false);
-            }
-            showHaiku(msg.value);
-            console.log("jquery");
-            // Socket.ioサーバへ送信
-            ans = await parce(msg.value)
-            socket.emit("post",{text : ans} );
-
-            // 発言フォームを空にする
-            msg.value = "";
-        });
 
         /**
          * [イベント] 誰かが発言した
@@ -134,7 +80,6 @@
             // cardContainer.innerHTML = `${msg.text['haiku']}`;
             // list.insertBefore(li, list.firstChild);
         });
->>>>>>> 78ec88cdb8e32d04b4038f328a3bcea72d50f454
 
         /**
          * [イベント] ページの読込み完了
