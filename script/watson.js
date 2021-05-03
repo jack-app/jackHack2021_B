@@ -15,16 +15,16 @@ function replace(text) {
     // var spanText = document.getElementById('messages');
     // spanText.value = text;
     $(function () {
-        var element = '<div class="card-item">';
+        var element = '<div class="card1">';
         for (let index = 0; index < 3; index++) {
-            element += '<div class="card-item-text">' + text[index] + '</div>';
+            element += '<div class="card-text' + (index + 1) + '">' +  text[index] + '</div>';
         }
         element+='</div>';
         // 所定の要素に新たな要素とテキストを追加する
-        if ($('.card-item').length ==0) {
-            $('.card-container').html(element);
+        if ($('.card1').length ==0) {
+            $('.card-item').html(element);
         }else{
-            $('.card-item:first').before(element);
+            $('.card1:first').before(element);
         }
         
     });
