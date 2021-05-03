@@ -4,54 +4,183 @@
     <meta charset="UTF-8">
     <title>17字で思いの丈を綴るチャットツール</title>
   </head>
-  <body>
+  <body class="main">
     <div class="container">
       <div class="wrapper">
         <header>
           <div class="title-wrapper">
-            <div class="title-icon">575</div>
+            <div class="title-icon">5 7 5</div>
             <h1 class="headline">17字で思いの丈を綴るチャットツール</h1>
           </div>
         </header>
         <div class="components">
           <div class="card-container">
-            <div class="card-item"></div>
+            <div class="card-item">
+              <div class="card1">
+                <p class="card-text1">古池や</p>
+                <p class="card-text2">蛙飛び込む</p>
+                <p class="card-text3">水の音</p>
+              </div>
+              <div class="card2">
+                <p class="card-text1">古池や</p>
+                <p class="card-text2">蛙飛び込む</p>
+                <p class="card-text3">水の音</p>
+              </div>
+              <div class="card3">
+                <p class="card-text1">古池や</p>
+                <p class="card-text2">蛙飛び込む</p>
+                <p class="card-text3">水の音</p>
+              </div>
+              <div class="card4">
+                <p class="card-text1">古池や</p>
+                <p class="card-text2">蛙飛び込む</p>
+                <p class="card-text3">水の音</p>
+              </div>
+            </div>
           </div>
           <div class="post-wrapper">
             <div class="posts">
               <form id="frm-post">
-                <input type="text" id="msg" size="20">
-                <button>送信</button>
+                <div class="post-texts">
+                  <input type="text" id="msg" class="post-text" maxlength="20" size="50rem" placeholder="17字で思いの丈を綴ろう">
+                </div>
+                <div class="btn-wrapper">
+                  <button class="post-btn">投句する</button>
+                </div>
               </form>
             </div>
             <div class="post-image">
-              <img src="" alt="短歌を詠むうさぎ">
-              <img src="" alt="わくわくしているかえる">
+              <img class="card1-img" src="./assets/rabbit.png" alt="短歌を詠むうさぎ">
+              <img class="card2-img" src="./assets/flog.png" alt="わくわくしているかえる">
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </body>
 </html>
 
 <style>
-.body{
-  margin: 0;
-  background-color: #EDEDE8;
+.main{
+  margin: 0px;
+  padding: 0px;
 }
 .container{
   margin: 0 auto;
+  background-color: #EDEDE8;
 }
 .wrapper{
-  width: 80%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+.title-wrapper{
+  display: flex;
+  color: #C13A40;
+  padding-top: 2vh;
+}
+.title-icon{
+  font-size:3rem;
+}
+.headline{
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 2.4vh;
+  margin-left: 1.5vw;
 }
 .components{
+  width: 80%;
+  margin: 0 auto; /*効いてない*/
+  margin-top: 5vh;
+  margin-left: 10vw;
   display: flex;
 }
-.button{
-  
+.card1{
+  width: 20vw;
+  background: #CABA89;
+  border-radius: 5px;
+  border:16px solid;
+  border-color:#416853;
+  box-shadow: 0 2px 5px #ccc;
+  font-size: 1.5rem;
+  margin-right: 2vw;
+}
+.card2{
+  width: 22vw;
+  background: #CABA89;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  font-size: 1.5rem;
+}
+.card3{
+  width: 22vw;
+  background: #CABA89;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  font-size: 1.5rem;
+}
+.card4{
+  width: 22vw;
+  background: #CABA89;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  font-size: 1.5rem;
+}
+.card-text1{
+  padding-top: 1.5rem;
+  padding-left: 4rem;
+}
+.card-text2{
+  padding-left: 6rem;
+}
+.card-text3{
+  padding-left: 11rem;
+  padding-bottom: 1.5rem;
+}
+.card1-img{
+  margin-top: 20vh;
+  margin-left: 3.5vw;
+  width: 20%;
+  height: 20%;
+}
+.card2-img{
+  margin-top: 30vh;
+  margin-left: 3.5vw;
+  width: 30%;
+  height: 30%;
+}
+.post-wrapper{
+  margin-left: 32vw;
+  padding-top: 3vh;
+  position: fixed;
+}
+.post-text{
+  height: 4vh;
+  font-size: 1rem;
+  padding: 1vh;
+  border-radius:5px;
+}
+.btn-wrapper{
+  margin-top: 2vh;
+  margin-left: 17vw;
+}
+.post-btn{
+  color: #222222;
+  background-color:#C6665A;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.post-btn:hover {
+  background: #C13A40;
+}
+.post-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ce8980;
 }
 .post-image{
   display: flex;
