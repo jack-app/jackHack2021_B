@@ -1,6 +1,7 @@
 const app  = require("express")();
 const http = require("http").createServer(app);
 const io   = require("socket.io")(http);
+const express = require('express');
 
 /**
  * "/"にアクセスがあったらindex.htmlを返却
@@ -12,9 +13,8 @@ app.get("/haiku.js", (req, res)=>{
   res.sendFile(__dirname + "/haiku.js");
 });
 
-/*app.get("/haiku.js", (req, res)=>{
-  res.sendFile(__dirname + "/haiku.js");
-});*/
+app.use('/assets',express.static('assets'));
+
 
 /**
  * [イベント] ユーザーが接続
