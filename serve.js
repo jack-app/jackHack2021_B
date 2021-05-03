@@ -7,11 +7,12 @@ const io   = require("socket.io")(http);
  * "/"にアクセスがあったらindex.htmlを返却
  */
 app.get("/", (req, res)=>{
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/main.html");
 });
 app.use(express.static('./script'));
 
 app.use('/assets',express.static('assets'));
+app.use('/fonts',express.static('fonts'));
 
 
 /**
