@@ -12,6 +12,7 @@ app.get("/", (req, res)=>{
 app.use(express.static('./script'));
 
 app.use('/assets',express.static('assets'));
+app.use('/fonts',express.static('fonts'));
 
 
 /**

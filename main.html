@@ -17,24 +17,24 @@
           <div class="card-container">
             <div class="card-item">
               <div class="card1">
-                <p class="card-text1">古池や</p>
-                <p class="card-text2">蛙飛び込む</p>
-                <p class="card-text3">水の音</p>
+                <div class="card-text1">古池や</div>
+                <div class="card-text2">蛙飛び込む</div>
+                <div class="card-text3">水の音</div>
               </div>
               <div class="card2">
-                <p class="card-text1">古池や</p>
-                <p class="card-text2">蛙飛び込む</p>
-                <p class="card-text3">水の音</p>
+                <div class="card-text1">古池や</div>
+                <div class="card-text2">蛙飛び込む</div>
+                <div class="card-text3">水の音</div>
               </div>
               <div class="card3">
-                <p class="card-text1">古池や</p>
-                <p class="card-text2">蛙飛び込む</p>
-                <p class="card-text3">水の音</p>
+                <div class="card-text1">古池や</div>
+                <div class="card-text2">蛙飛び込む</div>
+                <div class="card-text3">水の音</div>
               </div>
               <div class="card4">
-                <p class="card-text1">古池や</p>
-                <p class="card-text2">蛙飛び込む</p>
-                <p class="card-text3">水の音</p>
+                <div class="card-text1">古池や</div>
+                <div class="card-text2">蛙飛び込む</div>
+                <div class="card-text3">水の音</div>
               </div>
             </div>
           </div>
@@ -104,6 +104,11 @@
 </html>
 
 <style>
+ @font-face {
+      font-family: 'Haiku';
+      src: url(./fonts/font_acgyosyo/acgyosyo.ttf);
+    }
+
 .main{
   margin: 0px;
   padding: 0px;
@@ -111,6 +116,7 @@
 .container{
   margin: 0 auto;
   background-color: #EDEDE8;
+  min-height: 100vh;
 }
 .wrapper{
   margin-left: 10vw;
@@ -138,61 +144,90 @@
   display: flex;
 }
 .card1{
-  width: 20vw;
+  font-family: 'Haiku';
+  font-weight: 600;
+  min-width: 20vw;
   background: #CABA89;
   border-radius: 5px;
-  border:16px solid;
+  border: 8px solid;
   border-color:#416853;
   box-shadow: 0 2px 5px #ccc;
   font-size: 1.5rem;
   margin-right: 2vw;
+  margin-bottom: 2vh;
 }
 .card2{
-  width: 22vw;
+  font-family: 'Haiku';
+  font-weight: 600;
+  min-width: 20vw;
   background: #CABA89;
+  border-radius: 5px;
+  border: 8px solid;
+  border-color:#416853;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
   font-size: 1.5rem;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
 }
 .card3{
-  width: 22vw;
+  font-family: 'Haiku';
+  font-weight: 600;
+  margin-top: 2vh;
+  min-width: 20vw;
   background: #CABA89;
   border-radius: 5px;
+  border-radius: 5px;
+  border:8px solid;
+  border-color:#416853;
   box-shadow: 0 2px 5px #ccc;
   font-size: 1.5rem;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
 }
 .card4{
-  width: 22vw;
+  font-family: 'Haiku';
+  font-weight: 600;
+  margin-top:2vh;
+  min-width: 20vw;
   background: #CABA89;
   border-radius: 5px;
+  border-radius: 5px;
+  border:8px solid;
+  border-color:#416853;
   box-shadow: 0 2px 5px #ccc;
   font-size: 1.5rem;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
 }
 .card-text1{
-  padding-top: 1.5rem;
-  padding-left: 4rem;
+  padding-top: 1rem;
+  padding-left: 3rem;
 }
 .card-text2{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   padding-left: 6rem;
 }
 .card-text3{
   padding-left: 11rem;
-  padding-bottom: 1.5rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
 }
 .card1-img{
-  margin-top: 20vh;
-  margin-left: 3.5vw;
-  width: 20%;
-  height: 20%;
+  margin-top: 25vh;
+  margin-left: 6vw;
+  width: 13%;
+  height: 13%;
 }
 .card2-img{
-  margin-top: 30vh;
-  margin-left: 3.5vw;
-  width: 30%;
-  height: 30%;
+  margin-top: 35vh;
+  margin-left: 4vw;
+  width: 17%;
+  height: 17%;
 }
 .post-wrapper{
-  margin-left: 32vw;
+  margin-left: 34vw;
   padding-top: 3vh;
   position: fixed;
 }
@@ -201,6 +236,9 @@
   font-size: 1rem;
   padding: 1vh;
   border-radius:5px;
+}
+.post-text:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset;
 }
 .btn-wrapper{
   margin-top: 2vh;
@@ -211,8 +249,9 @@
   background-color:#C6665A;
   border: none;
   border-radius: 10px;
+  font-family: 'Yu Mincho';
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 500;
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;
