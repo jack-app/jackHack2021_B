@@ -14,7 +14,7 @@ async function morph(str) {
 };
 
 function haikuLength(str) {
-  let ary = str.match(/ャ|ュ|ョ/g);
+  let ary = str.match(/ャ|ュ|ョ|ァ|ィ|ゥ|ェ|ォ/g);
   if (ary == null) {
     return str.length;
   } else {
@@ -41,15 +41,31 @@ async function parce(str) {
     simo += word[0];
     simo_y += word[1];
   };
-
-  let json = {
-    俳句:[
-      kami,naka,simo
-    ],
-    読み:[
-      kami_y,naka_y,simo_y
-    ]
+  
+  if (haikuLength(kami_y)==5 && haikuLength(naka_y) == 7 && haikuLength(simo_y)==5) {
+    let json = {
+      haiku:[
+        kami,naka,simo
+      ],
+      read:[
+        kami_y,naka_y,simo_y
+      ]
+    };
+    return json
+  } else {
+    return null;
   };
-  console.log(json);
-  return json
+};
+
+async function postHaiku(msg) {
+  var haiku = await parce(msg.value);
+  console.log(haiku);
+  if (haiku != null) {
+    // Socket.ioサーバへ送信
+    socket.emit("post", {text: haiku});
+    // 発言フォームを空にする
+    msg.value = "";
+  }else{
+    alert("この文は575ではありません")
+  };
 };
