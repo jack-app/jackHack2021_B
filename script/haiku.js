@@ -56,3 +56,16 @@ async function parce(str) {
     return null;
   };
 };
+
+async function postHaiku(msg) {
+  var haiku = await parce(msg.value);
+  console.log(haiku);
+  if (haiku != null) {
+    // Socket.ioサーバへ送信
+    socket.emit("post", {text: haiku});
+    // 発言フォームを空にする
+    msg.value = "";
+  }else{
+    alert("この文は575ではありません")
+  };
+};

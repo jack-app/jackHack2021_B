@@ -45,18 +45,7 @@
    * [イベント] フォームが送信された
    */
 
-  async function postHaiku(msg) {
-    var haiku = await parce(msg.value);
-    console.log(haiku);
-    if (haiku != null) {
-      // Socket.ioサーバへ送信
-      socket.emit("post", {text: haiku});
-      // 発言フォームを空にする
-      msg.value = "";
-    }else{
-      alert("この文は575ではありません")
-    };
-  };
+ 
 
   document.querySelector("#frm-post").addEventListener("submit", (e)=>{
     // 規定の送信処理をキャンセル(画面遷移しないなど)
