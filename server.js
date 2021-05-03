@@ -2,6 +2,10 @@ const http = require('http');
 const fs = require('fs');
 const firebase = require('./firebase');
 
+const express = require("express");
+const app  = require("express")();
+
+app.use(express.static('./script'));
 
 var admin = require("firebase-admin");
 var serviceAccount = require("./five-seven-five-93ee2-firebase-adminsdk-q2lof-71c98e5a90.json");
@@ -32,7 +36,7 @@ const server = http.createServer((req, res) => {
                     console.log(err);
                 }
                 res.writeHead(200, {'Content-Type': 'text/html'});
-                const data2 = data.replace(/@messages/g, test1[0]['test2-1']);
+                const data2 = data.replace(/@messages/g, test1);
                 res.write(data2);
                 res.end();
             });
