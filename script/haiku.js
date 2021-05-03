@@ -41,7 +41,6 @@ async function parce(str) {
     simo += word[0];
     simo_y += word[1];
   };
-<<<<<<< HEAD
   
   if (haikuLength(kami_y)==5 && haikuLength(naka_y) == 7 && haikuLength(simo_y)==5) {
     let json = {
@@ -55,15 +54,5 @@ async function parce(str) {
     return json
   } else {
     return null;
-=======
-
-  let json = {  
-    haiku:[
-      kami,naka,simo
-    ],
-    read:[
-      kami_y,naka_y,simo_y
-    ]
->>>>>>> 78ec88cdb8e32d04b4038f328a3bcea72d50f454
   };
 };
