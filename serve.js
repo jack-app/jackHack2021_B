@@ -14,6 +14,7 @@ app.get("/haiku.js", (req, res)=>{
 });
 
 app.use('/assets',express.static('assets'));
+app.use('/fonts',express.static('fonts'));
 
 
 /**
