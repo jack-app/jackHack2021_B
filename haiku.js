@@ -14,7 +14,7 @@ async function morph(str) {
 };
 
 function haikuLength(str) {
-  let ary = str.match(/ャ|ュ|ョ/g);
+  let ary = str.match(/ャ|ュ|ョ|ァ|ィ|ゥ|ェ|ォ/g);
   if (ary == null) {
     return str.length;
   } else {
@@ -42,11 +42,11 @@ async function parce(str) {
     simo_y += word[1];
   };
 
-  let json = {
-    俳句:[
+  let json = {  
+    haiku:[
       kami,naka,simo
     ],
-    読み:[
+    read:[
       kami_y,naka_y,simo_y
     ]
   };
