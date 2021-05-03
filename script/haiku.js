@@ -41,15 +41,31 @@ async function parce(str) {
     simo += word[0];
     simo_y += word[1];
   };
-
-  let json = {  
-    haiku:[
-      kami,naka,simo
-    ],
-    read:[
-      kami_y,naka_y,simo_y
-    ]
+  
+  if (haikuLength(kami_y)==5 && haikuLength(naka_y) == 7 && haikuLength(simo_y)==5) {
+    let json = {
+      haiku:[
+        kami,naka,simo
+      ],
+      read:[
+        kami_y,naka_y,simo_y
+      ]
+    };
+    return json
+  } else {
+    return null;
   };
-  console.log(json);
-  return json
+};
+
+async function postHaiku(msg) {
+  var haiku = await parce(msg.value);
+  console.log(haiku);
+  if (haiku != null) {
+    // Socket.ioサーバへ送信
+    socket.emit("post", {text: haiku});
+    // 発言フォームを空にする
+    msg.value = "";
+  }else{
+    alert("この文は575ではありません")
+  };
 };
