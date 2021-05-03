@@ -8,12 +8,15 @@
 
 <body>
 
-    <h1>Firestoreチャット</h1>
-    <div id="messages">@messages</div>
-    <div class="chat-form">
-        <input type="text">
-        <input type="submit" value="送信">
-    </div>
+<h1>Firestoreチャット</h1>
+
+<!--
+<div id="messages">@messages</div>
+<div class="chat-form">
+  <input type="text">
+  <input type="submit" value="送信">
+</div>
+-->
 
     <!-- 発言フォーム -->
     <form id="frm-post">
@@ -29,51 +32,32 @@
         <img src="//u.xgoo.jp/img/sgoo.png" alt="supported by goo" title="supported by goo" width="100">
     </a>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="haiku.js"></script>
     <script src="watson.js"></script>
-    <script>
 
-        //-------------------------------------
-        // Socket.ioサーバへ接続
-        //-------------------------------------
-        const socket = io();
-        /**
-         * [イベント] フォームが送信された
-         */
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  //-------------------------------------
+  // Socket.ioサーバへ接続
+  //-------------------------------------
+  const socket = io();
+  /**
+   * [イベント] フォームが送信された
+   */
 
-        // $(function () {
-        //     $('#btn_id').click(function () {
-        //         //
-        //         // バリデーションチェックや、データの加工を行う。
-        //         //
-        //         console.log("jquery");
-        //         //$('frm-post').submit();
-        //     });
-        // })
+ 
 
-        document.querySelector("#frm-post").addEventListener("submit", async (e) => {
-            // 規定の送信処理をキャンセル(画面遷移しないなど)
-            e.preventDefault();
-            //replace('dd');
-            // var spanText = document.getElementById('messages');
-            // console.log(spanText.innerText);
-            // spanText.innerText="nu";
-            // spanText.text="sss";
-            // 入力内容を取得する
-            const msg = document.querySelector("#msg");
-            if (msg.value === "") {
-                return (false);
-            }
-            showHaiku(msg.value);
-            console.log("jquery");
-            // Socket.ioサーバへ送信
-            ans = await parce(msg.value)
-            socket.emit("post",{text : ans} );
+  document.querySelector("#frm-post").addEventListener("submit", (e)=>{
+    // 規定の送信処理をキャンセル(画面遷移しないなど)
+    e.preventDefault();
 
-            // 発言フォームを空にする
-            msg.value = "";
-        });
+    // 入力内容を取得する
+    const msg = document.querySelector("#msg");
+    if( msg.value === "" ){
+      return(false);
+    }
+    postHaiku(msg);
+  });
 
         /**
          * [イベント] 誰かが発言した
